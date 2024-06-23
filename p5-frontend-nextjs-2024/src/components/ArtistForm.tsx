@@ -1,14 +1,13 @@
 'use client';
-
 import { actionAddArtist } from '@/actions/artists';
 import React, { useRef } from 'react';
 
-export default async function ArtistForm() {
+export default function ArtistForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const addArtist = async (formData: FormData) => {
+  const addArtist = (formData: FormData) => {
     formRef.current?.reset();
-    await actionAddArtist(formData);
+    actionAddArtist(formData);
   }
 
   return (

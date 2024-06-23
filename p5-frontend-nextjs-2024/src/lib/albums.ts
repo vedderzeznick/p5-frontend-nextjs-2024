@@ -4,16 +4,16 @@ export const getAlbums = async () => {
   return await db.album.findMany();
 };
 
-export const dbAddAlbum = async (title: string, artistId: number) => {
+export const dbAddAlbum = async (title: string, artistId: number, coverUrl?: string) => {
   return await db.album.create({
-    data: { title, artistId },
+    data: { title, artistId, coverUrl },
   });
 };
 
-export const dbUpdateAlbum = async (id: number, title: string, artistId: number) => {
+export const dbUpdateAlbum = async (id: number, title: string, artistId: number, coverUrl?: string) => {
   return await db.album.update({
     where: { id },
-    data: { title, artistId },
+    data: { title, artistId, coverUrl },
   });
 };
 

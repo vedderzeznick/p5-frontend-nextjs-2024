@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 
 export async function actionAddAlbum(formData: FormData) {
   const titleField = formData.get("title");
+  const cover = formData.get("cover");
   const artistIdField = formData.get("artistId");
 
   if (titleField === null || artistIdField === null) {

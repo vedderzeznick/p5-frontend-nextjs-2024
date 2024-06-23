@@ -20,8 +20,9 @@ model Artist {
 }
 
 model Album {
-  id       Int     @id @default(autoincrement())
-  title    String
-  artistId Int
-  artist   Artist  @relation(fields: [artistId], references: [id])
+  id        Int     @id @default(autoincrement())
+  title     String
+  artistId  Int
+  artist    Artist  @relation(fields: [artistId], references: [id])
+  coverUrl  String? // New field for storing the album cover URL
 }

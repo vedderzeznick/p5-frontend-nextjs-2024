@@ -1,4 +1,4 @@
-import db from './db';
+import db from "./db";
 
 export const getArtists = async () => {
   return await db.artist.findMany();
@@ -18,6 +18,9 @@ export const dbUpdateArtist = async (id: number, name: string) => {
 };
 
 export const dbDeleteArtist = async (id: number) => {
+  await db.album.deleteMany({
+    where: { artistId: id },
+  });
   return await db.artist.delete({
     where: { id },
   });
