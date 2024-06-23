@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.artist-input {
+  color:black;
+}
+
+.album-input {
+  color:black;
+}
